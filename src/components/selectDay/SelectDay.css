@@ -1,0 +1,31 @@
+:root {
+  --color-3: #3a86ff;
+}
+/* dia de la semana */
+input[type="radio"] {
+  display: none;
+}
+.day_week {
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-in-out;
+}
+input[type="radio"]:checked + .day_week {
+  background-color: var(--color-3);
+  color: white;
+}
+input[type="radio"]:hover + .day_week {
+  background-color: var(--color-3);
+  color: white;
+}
+
+
