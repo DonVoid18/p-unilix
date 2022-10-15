@@ -4,7 +4,7 @@ import IconEdit from "../icon_button/IconEdit";
 import ModalDelete from "../modal/modalDelete/ModalDelete";
 import ModalEdit from "../modal/modalEdit/ModalEdit";
 import CellCourse from "../cellCourse/CellCourse";
-let data = [
+let data1 = [
   {
     id: "1",
     name: "TRIGOs",
@@ -29,7 +29,7 @@ let data = [
   {
     id: "4qwe",
     name: "TRIGOs",
-    openCourse: "12:00",
+    openCourse: "13:00",
     finishCourse: "12:00",
     day: "1",
   },
@@ -50,18 +50,20 @@ let data = [
 ];
 import { useState } from "react";
 const Table = () => {
+  const [data, setData] = useState(data1);
   const [openModal, setOpenModal] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);
-  const [idSelect, setIdSelect] = useState("");
+  const [valueSelect, setValueSelect] = useState("");
 
-  const handlerModal1 = (id) => {
+  const handlerModal1 = (obj) => {
+    setValueSelect(obj);
     setOpenModal1(!openModal1);
-    setIdSelect(id);
   };
-  const handlerModal = (id) => {
+  const handlerModal = (obj) => {
+    setValueSelect(obj);
     setOpenModal(!openModal);
-    setIdSelect(id);
   };
+
   const cellCourses = (number) => {
     return data
       .filter((course) => course.day === number)
@@ -100,17 +102,18 @@ const Table = () => {
     }
     return model;
   };
+
   const deleteCourse = () => {
-    const newCourses = data.filter((course) => course.id !== idSelect);
-    data = newCourses;
+    const newCourses = data.filter((course) => course.id !== valueSelect.id);
+    setData(newCourses);
   };
   const modifiedCourse = () => {
-    let editCourse = data.filter((course) => course.id === idSelect);
-    editCourse[0].day = "5";
-    const newCourses = data.filter((course) => course.id !== idSelect);
-    data = [...newCourses, ...editCourse];
-    console.log(data);
+    // modificar
+    const newCourses = data.filter((course) => course.id !== valueSelect.id);
+    const newData = [...newCourses, valueSelect];
+    setData(newData);
   };
+
   return (
     <>
       <div className="container_table">
@@ -159,6 +162,8 @@ const Table = () => {
         openModal={openModal1}
         setOpenModal={setOpenModal1}
         modifiedCourse={modifiedCourse}
+        objModified={valueSelect}
+        setValueSelect={setValueSelect}
       />
     </>
   );

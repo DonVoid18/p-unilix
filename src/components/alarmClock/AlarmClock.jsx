@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-const AlarmClock = ({ name, titleClock, eventOnChan }) => {
+const AlarmClock = ({ name, titleClock, eventOnChan, valueHor }) => {
   return (
     <Stack noValidate spacing={3}>
       <TextField
@@ -9,7 +9,7 @@ const AlarmClock = ({ name, titleClock, eventOnChan }) => {
         id="time"
         label={titleClock}
         type="time"
-        defaultValue="00:00"
+        defaultValue={valueHor || "00:00"}
         InputLabelProps={{
           shrink: true,
         }}

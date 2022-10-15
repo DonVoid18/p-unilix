@@ -8,8 +8,8 @@ const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
         {value.openCourse} - {value.finishCourse}
       </p>
       <div className="buttons_cell">
-        <button onClick={() => f1(value.id)}>{ic1}</button>
-        <button onClick={() => f2(value.id)}>{ic2}</button>
+        <button onClick={() => f1(value)}>{ic1}</button>
+        <button onClick={() => f2(value)}>{ic2}</button>
       </div>
     </div>
   );

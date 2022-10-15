@@ -1,61 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "../Modal";
-import styled from "styled-components";
-const ModalEdit = ({ openModal, setOpenModal, modifiedCourse }) => {
+import SelectDay from "../../selectDay/SelectDay";
+import AlarmClock from "../../alarmClock/AlarmClock";
+import {
+  ContainerSelectDay,
+  ContainerInput,
+  NameInputContainer,
+  Boton,
+  Contenido,
+  ContainerSchedule,
+} from "./stylesComponents";
+const ModalEdit = ({
+  openModal,
+  setOpenModal,
+  modifiedCourse,
+  objModified,
+  setValueSelect,
+}) => {
+  const form = objModified;
+  const handleChange = (e) => {
+    setValueSelect({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendForm = (e) => {
+    e.preventDefault();
+    // validaciones antes de enviar
+    modifiedCourse();
+    console.log(form);
+  };
   return (
     <Modal
       estado={openModal}
       cambiarEstado={setOpenModal}
-      titulo="Modificar Horario"
+      titulo="Modificar Curso"
       mostrarHeader={true}
       mostrarOverlay={true}
       posicionModal={"center"}
       padding={"20px"}
     >
-      <Contenido>
-        <div>
-          <input type="text" />
-          horario
-        </div>
-        <Boton
+      <Contenido onSubmit={sendForm}>
+        <ContainerInput>
+          <NameInputContainer>Curso</NameInputContainer>
+          <input
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+          />
+        </ContainerInput>
+        <ContainerSchedule>
+          <NameInputContainer>Horario</NameInputContainer>
+          <AlarmClock
+            name="openCourse"
+            eventOnChan={handleChange}
+            titleClock="Inicio"
+            valueHor={form.openCourse}
+          />
+          <AlarmClock
+            name="finishCourse"
+            eventOnChan={handleChange}
+            titleClock="Fin"
+            valueHor={form.finishCourse}
+          />
+        </ContainerSchedule>
+        <ContainerSelectDay>
+          <NameInputContainer>Día de la semana</NameInputContainer>
+          <SelectDay
+            name={"day"}
+            handleChange={handleChange}
+            valueDay={form.day}
+          />
+        </ContainerSelectDay>
+        {/* <Boton
           onClick={() => {
             setOpenModal(!openModal);
             modifiedCourse();
           }}
         >
           Modificar
-        </Boton>
+        </Boton> */}
+        <Boton type="submit">Modificar</Boton>
       </Contenido>
     </Modal>
   );
 };
 
 export default ModalEdit;
-
-const Boton = styled.button`
-  padding: 10px 30px;
-  color: #fff;
-  border: none;
-  background: #09c598;
-  transition: 0.3s ease all;
-  &:hover {
-    filter: grayscale(30%);
-  }
-`;
-
-const Contenido = styled.div`
-  display: grid;
-  gap: 1em;
-  p {
-    font-size: 1em;
-    padding-bottom: 0.5em;
-  }
-  select {
-    padding: 10px;
-    outline: none;
-  }
-  input {
-    padding: 10px;
-    outline: none;
-  }
-`;

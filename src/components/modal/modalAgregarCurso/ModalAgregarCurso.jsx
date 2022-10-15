@@ -53,7 +53,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
             placeholder="Nombre del curso..."
           />
           <div className="select">
-            <select 
+            <select
               name="nameCourse"
               disabled={false}
               onChange={handleChange}
