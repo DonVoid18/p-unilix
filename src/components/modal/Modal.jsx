@@ -89,7 +89,7 @@ const EncabezadoModal = styled.div`
   h3 {
     font-weight: 700;
     font-size: 1.1em;
-    color: #1766dc;
+    color: #32D4A4;
     letter-spacing: 1px;
   }
 `;
@@ -106,7 +106,7 @@ const BotonCerrar = styled.button`
   cursor: pointer;
   transition: 0.3s ease all;
   border-radius: 5px;
-  color: #1766dc;
+  color: #32D4A4;
 
   &:hover {
     background: #f2f2f2;

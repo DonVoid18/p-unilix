@@ -14,9 +14,7 @@ const ModalCruces = ({ openModal, setOpenModal }) => {
       widthContenedor={"700px"}
     >
       <Contenido>
-        {/* //TODO contenedores de cruces de horario */}
         <p>No existe ningún cruce de horario.</p>
-        <Boton onClick={() => setOpenModal(!openModal)}>Aceptar</Boton>
       </Contenido>
     </Modal>
   );

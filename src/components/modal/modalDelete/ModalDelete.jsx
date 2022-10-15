@@ -33,13 +33,12 @@ const Boton = styled.button`
   padding: 10px 30px;
   color: #fff;
   border: none;
-  background: #1766dc;
+  background: #ef233c;
   transition: 0.3s ease all;
   &:hover {
-    background: #0066ff;
+    filter: grayscale(30%);
   }
 `;
-
 const Contenido = styled.div`
   display: grid;
   gap: 1em;

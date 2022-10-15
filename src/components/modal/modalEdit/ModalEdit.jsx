@@ -36,10 +36,10 @@ const Boton = styled.button`
   padding: 10px 30px;
   color: #fff;
   border: none;
-  background: #1766dc;
+  background: #09c598;
   transition: 0.3s ease all;
   &:hover {
-    background: #0066ff;
+    filter: grayscale(30%);
   }
 `;
 

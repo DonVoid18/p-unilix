@@ -18,7 +18,8 @@
   font-size: 1em;
 }
 .container_column_title {
-  background-color: #ffca3a;
+  background-color: rgb(40, 52, 186);
+  color: white;
   text-align: center;
   border-radius: 5px;
   font-weight: 700;
@@ -40,7 +41,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 700;
 }
 .buttons_cell {
   display: flex;
@@ -51,11 +52,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3125rem;
+  padding: 0.25rem;
   color: var(--ct-1);
 }
 .buttons_cell button:nth-child(1) {
-  background: #57aa04;
+  background: linear-gradient(
+    99.9deg,
+    rgb(0, 199, 103) 2.1%,
+    rgb(0, 196, 101) 109.65%
+  );
 }
 .buttons_cell button:nth-child(2) {
   background: #ef233c;

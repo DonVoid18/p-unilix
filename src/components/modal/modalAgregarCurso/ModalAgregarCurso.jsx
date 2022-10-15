@@ -40,7 +40,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       mostrarOverlay={true}
       posicionModal={"center"}
       padding={"20px"}
-      widthContenedor={"450px"}
+      widthContenedor={"470px"}
     >
       <Contenido onSubmit={sendForm}>
         <ContainerInput>
@@ -53,7 +53,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
             placeholder="Nombre del curso..."
           />
           <div className="select">
-            <select
+            <select 
               name="nameCourse"
               disabled={false}
               onChange={handleChange}
