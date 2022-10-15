@@ -101,11 +101,15 @@ const Table = () => {
     return model;
   };
   const deleteCourse = () => {
-    console.log(`Eliminando ${idSelect}`);
     const newCourses = data.filter((course) => course.id !== idSelect);
-    console.log(newCourses);
     data = newCourses;
-    console.log("eliminado");
+  };
+  const modifiedCourse = () => {
+    let editCourse = data.filter((course) => course.id === idSelect);
+    editCourse[0].day = "5";
+    const newCourses = data.filter((course) => course.id !== idSelect);
+    data = [...newCourses, ...editCourse];
+    console.log(data);
   };
   return (
     <>
@@ -151,7 +155,11 @@ const Table = () => {
         setOpenModal={setOpenModal}
         deleteCourse={deleteCourse}
       />
-      <ModalEdit openModal={openModal1} setOpenModal={setOpenModal1} />
+      <ModalEdit
+        openModal={openModal1}
+        setOpenModal={setOpenModal1}
+        modifiedCourse={modifiedCourse}
+      />
     </>
   );
 };

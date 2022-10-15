@@ -56,8 +56,3 @@ const Contenido = styled.div`
     outline: none;
   }
 `;
-const Section = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 5px;
-`;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "../Modal";
 import SelectDay from "../../selectDay/SelectDay";
 import AlarmClock from "../../alarmClock/AlarmClock";

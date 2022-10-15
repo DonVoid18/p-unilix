@@ -1,12 +1,12 @@
 import React from "react";
 import Modal from "../Modal";
 import styled from "styled-components";
-const ModalEdit = ({ openModal, setOpenModal }) => {
+const ModalEdit = ({ openModal, setOpenModal, modifiedCourse }) => {
   return (
     <Modal
       estado={openModal}
       cambiarEstado={setOpenModal}
-      titulo="Establecer Horario"
+      titulo="Modificar Horario"
       mostrarHeader={true}
       mostrarOverlay={true}
       posicionModal={"center"}
@@ -14,16 +14,17 @@ const ModalEdit = ({ openModal, setOpenModal }) => {
     >
       <Contenido>
         <div>
-          <p>Curso</p>
-          <Section>
-            <select name="" id="">
-              <option value="">Selecionar</option>
-            </select>
-            <input type="text" placeholder="Nuevo curso" />
-          </Section>
+          <input type="text" />
+          horario
         </div>
-        <p>Reutilizable y con opciones de personalización.</p>
-        <Boton onClick={() => setOpenModal(!openModal)}>Agregar</Boton>
+        <Boton
+          onClick={() => {
+            setOpenModal(!openModal);
+            modifiedCourse();
+          }}
+        >
+          Modificar
+        </Boton>
       </Contenido>
     </Modal>
   );
@@ -57,9 +58,4 @@ const Contenido = styled.div`
     padding: 10px;
     outline: none;
   }
-`;
-const Section = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 5px;
 `;
