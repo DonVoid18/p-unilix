@@ -54,6 +54,7 @@ const Boton = styled.button`
 const Contenido = styled.form`
   display: grid;
   gap: 1.5em;
+
   select {
     padding: 0.625rem;
     outline: none;
@@ -66,6 +67,9 @@ const Contenido = styled.form`
     border-radius: 5px;
     border: none;
     font-size: 1em;
+  }
+  .not-valid {
+    box-shadow: 0 0 0 1.5px #ef233c;
   }
 `;
 export {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../Modal";
 import SelectDay from "../../selectDay/SelectDay";
 import AlarmClock from "../../alarmClock/AlarmClock";
@@ -11,26 +11,63 @@ import {
   Contenido,
   ContainerSchedule,
 } from "./stylesComponents";
+const regexValid = /^[^]+$/;
 const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
   const [form, setForm] = useState({
     nameCourse: "",
-    openCourse: "00:00",
-    finishCourse: "00:00",
+    openCourse: "",
+    finishCourse: "",
     dayCourse: "",
   });
+  const [validName, setValidName] = useState();
+  const [validDay, setValidDay] = useState();
+  const [validHor, setValidHor] = useState();
+
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
+  useEffect(() => {
+    if (form.nameCourse !== "") {
+      setValidName(true);
+    }
+    if (form.dayCourse !== "") {
+      setValidDay(true);
+    }
+    if (form.openCourse !== "" && form.finishCourse !== "") {
+      setValidHor(validHorario());
+    }
+  }, [form]);
 
   const sendForm = (e) => {
     e.preventDefault();
-    // validaciones antes de enviar
-    console.log(form);
-  };
 
+    const resultName = regexValid.test(form.nameCourse);
+    const resultDay = regexValid.test(form.dayCourse);
+    const resultHor = validHorario();
+    setValidName(resultName);
+    setValidDay(resultDay);
+    setValidHor(resultHor);
+
+    if (resultName && resultDay && resultHor) {
+      console.log("bien validado");
+    }
+  };
+  const validHorario = () => {
+    const oH = form.openCourse.split(":");
+    const fH = form.finishCourse.split(":");
+    // validacion
+    const m1 = parseInt(oH[0]) * 60 + parseInt(oH[1]);
+    const m2 = parseInt(fH[0]) * 60 + parseInt(fH[1]);
+    console.log(m1 < m2);
+    return m1 < m2;
+  };
+  const classInputValid = (value) => {
+    if (value === undefined) return "";
+    if (value === false) return "not-valid";
+  };
   return (
     <Modal
       estado={openModal}
@@ -43,7 +80,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       widthContenedor={"470px"}
     >
       <Contenido onSubmit={sendForm}>
-        <ContainerInput>
+        <ContainerInput className={classInputValid(validName)}>
           <NameInputContainer>Curso</NameInputContainer>
           <input
             type="text"
@@ -55,7 +92,6 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
           <div className="select">
             <select
               name="nameCourse"
-              disabled={false}
               onChange={handleChange}
               value={form.nameCourse}
               className="select_course"
@@ -66,8 +102,11 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
             </select>
           </div>
         </ContainerInput>
-        <ContainerSchedule>
-          <NameInputContainer>Horario</NameInputContainer>
+        <ContainerSchedule className={classInputValid(validHor)}>
+          <NameInputContainer>
+            Horario {validHor === undefined && ""}
+            {validHor === false && <span>&#128315;</span>}
+          </NameInputContainer>
           <AlarmClock
             name="openCourse"
             eventOnChan={handleChange}
@@ -79,10 +118,10 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
             titleClock="Fin"
           />
         </ContainerSchedule>
-        <ContainerSelectDay>
+        <ContainerSelectDay className={classInputValid(validDay)}>
           <NameInputContainer>Día de la semana</NameInputContainer>
           <SelectDay
-            name={"dayCourse"}
+            name="dayCourse"
             handleChange={handleChange}
             valueDay={form.dayCourse}
           />
