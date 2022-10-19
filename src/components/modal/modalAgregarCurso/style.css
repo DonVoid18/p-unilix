@@ -36,5 +36,52 @@
 .select:hover::after {
   color: #f39c12;
 }
+.correct-validation {
+  left: 50%;
+  top: 16px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  padding: 5px 10px;
+  border-radius: 5px;
+  animation: bn53bounce 4s infinite;
+}
+.bi-check-circle-fill {
+  margin-left: 5px;
+  color: #09c598;
+}
+@keyframes bn53bounce {
+  5%,
+  50% {
+    transform: scale(1);
+  }
 
+  10% {
+    transform: scale(1);
+  }
 
+  15% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1) rotate(-5deg);
+  }
+
+  25% {
+    transform: scale(1) rotate(5deg);
+  }
+
+  30% {
+    transform: scale(1) rotate(-3deg);
+  }
+
+  35% {
+    transform: scale(1) rotate(2deg);
+  }
+
+  40% {
+    transform: scale(1) rotate(0);
+  }
+}

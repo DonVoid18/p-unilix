@@ -11,6 +11,7 @@ const ModalDelete = ({ openModal, setOpenModal, deleteCourse }) => {
       mostrarOverlay={true}
       posicionModal={"center"}
       padding={"20px"}
+      colorText={"#ef233c"}
     >
       <Contenido>
         <p>¿Está seguro de eliminar este horario?</p>

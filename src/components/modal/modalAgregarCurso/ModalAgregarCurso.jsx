@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../Modal";
 import SelectDay from "../../selectDay/SelectDay";
 import AlarmClock from "../../alarmClock/AlarmClock";
+import Preloader from "../../Preloader/Preloader";
 import "./style.css";
 import {
   ContainerSelectDay,
@@ -22,7 +23,8 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
   const [validName, setValidName] = useState();
   const [validDay, setValidDay] = useState();
   const [validHor, setValidHor] = useState();
-
+  const [botonAgregado, setBotonAgregado] = useState(false);
+  const [preloader, setPreloader] = useState(false);
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -41,9 +43,14 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
     }
   }, [form]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setBotonAgregado(false);
+    }, 8000);
+  }, [botonAgregado]);
+
   const sendForm = (e) => {
     e.preventDefault();
-
     const resultName = regexValid.test(form.nameCourse);
     const resultDay = regexValid.test(form.dayCourse);
     const resultHor = validHorario();
@@ -52,8 +59,16 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
     setValidHor(resultHor);
 
     if (resultName && resultDay && resultHor) {
-      console.log("bien validado");
+      setPreloader(true);
+      // guardar el objeto
+      console.log(form);
+      setTimeout(() => {
+        setBotonAgregado(true);
+      }, 3000);
     }
+    setTimeout(() => {
+      setPreloader(false);
+    }, 3000);
   };
   const validHorario = () => {
     const oH = form.openCourse.split(":");
@@ -81,7 +96,10 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
     >
       <Contenido onSubmit={sendForm}>
         <ContainerInput className={classInputValid(validName)}>
-          <NameInputContainer>Curso</NameInputContainer>
+          <NameInputContainer>
+            Curso{validName === undefined && ""}
+            {validName === false && <span>&#128680;</span>}
+          </NameInputContainer>
           <input
             type="text"
             name="nameCourse"
@@ -105,7 +123,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
         <ContainerSchedule className={classInputValid(validHor)}>
           <NameInputContainer>
             Horario {validHor === undefined && ""}
-            {validHor === false && <span>&#128315;</span>}
+            {validHor === false && <span>&#128680;</span>}
           </NameInputContainer>
           <AlarmClock
             name="openCourse"
@@ -119,7 +137,10 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
           />
         </ContainerSchedule>
         <ContainerSelectDay className={classInputValid(validDay)}>
-          <NameInputContainer>Día de la semana</NameInputContainer>
+          <NameInputContainer>
+            Día de la semana {validDay === undefined && ""}
+            {validDay === false && <span>&#128680;</span>}
+          </NameInputContainer>
           <SelectDay
             name="dayCourse"
             handleChange={handleChange}
@@ -131,6 +152,22 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
         </Boton> */}
         <Boton type="submit">Agregar Curso</Boton>
       </Contenido>
+      {botonAgregado ? (
+        <div className="correct-validation">
+          Agregado
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className="bi bi-check-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+        </div>
+      ) : undefined}
+      {preloader ? <Preloader /> : undefined}
     </Modal>
   );
 };

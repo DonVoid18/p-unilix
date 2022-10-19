@@ -69,7 +69,7 @@ const Contenido = styled.form`
     font-size: 1em;
   }
   .not-valid {
-    box-shadow: 0 0 0 1.5px #ef233c;
+    border: 2px solid #e6394765;
   }
 `;
 export {

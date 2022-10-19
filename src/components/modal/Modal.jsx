@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import useOnClickOutside from "../../utils/useOnClickOutside";
 const Modal = ({
   children,
@@ -12,6 +12,7 @@ const Modal = ({
   posicionModal,
   padding,
   widthContenedor,
+  colorText,
 }) => {
   let modalRef = useRef();
   useOnClickOutside(modalRef, () => cambiarEstado(false));
@@ -25,12 +26,15 @@ const Modal = ({
             padding={padding}
           >
             {mostrarHeader && (
-              <EncabezadoModal>
+              <EncabezadoModal colorText={colorText}>
                 <h3>{titulo}</h3>
               </EncabezadoModal>
             )}
 
-            <BotonCerrar onClick={() => cambiarEstado(false)}>
+            <BotonCerrar
+              onClick={() => cambiarEstado(false)}
+              colorText={colorText}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -59,7 +63,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   background: ${(props) =>
-    props.mostrarOverlay ? "rgba(0,0,0,.5)" : "rgba(0,0,0,0)"};
+    props.mostrarOverlay ? "rgba(0,0,0,.7)" : "rgba(0,0,0,0)"};
   padding: 40px;
   display: flex;
   align-items: ${(props) =>
@@ -89,7 +93,7 @@ const EncabezadoModal = styled.div`
   h3 {
     font-weight: 700;
     font-size: 1.1em;
-    color: #32D4A4;
+    color: ${(props) => (props.colorText ? props.colorText : "#32D4A4")};
     letter-spacing: 1px;
   }
 `;
@@ -106,7 +110,7 @@ const BotonCerrar = styled.button`
   cursor: pointer;
   transition: 0.3s ease all;
   border-radius: 5px;
-  color: #32D4A4;
+  color: ${(props) => (props.colorText ? props.colorText : "#32D4A4")};
 
   &:hover {
     background: #f2f2f2;
