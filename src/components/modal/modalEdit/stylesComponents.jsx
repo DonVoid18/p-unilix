@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+const colorBack = "#7209b7";
 const ContainerSelectDay = styled.div`
   display: grid;
   position: relative;
@@ -42,7 +42,7 @@ const Boton = styled.button`
   padding: 0.925rem 1.875rem;
   color: #fff;
   border: none;
-  background: #09c598;
+  background: ${colorBack ? colorBack : "#09c598"};
   font-size: 1.1em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -54,6 +54,7 @@ const Boton = styled.button`
 const Contenido = styled.form`
   display: grid;
   gap: 1.5em;
+
   select {
     padding: 0.625rem;
     outline: none;
@@ -66,6 +67,9 @@ const Contenido = styled.form`
     border-radius: 5px;
     border: none;
     font-size: 1em;
+  }
+  .not-valid {
+    border: 2px solid #e6394765;
   }
 `;
 export {

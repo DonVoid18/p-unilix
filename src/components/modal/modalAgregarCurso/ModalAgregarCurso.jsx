@@ -97,7 +97,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       <Contenido onSubmit={sendForm}>
         <ContainerInput className={classInputValid(validName)}>
           <NameInputContainer>
-            Curso{validName === undefined && ""}
+            Curso {validName === undefined && ""}
             {validName === false && <span>&#128680;</span>}
           </NameInputContainer>
           <input

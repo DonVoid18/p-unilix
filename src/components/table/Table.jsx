@@ -16,7 +16,7 @@ let data1 = [
     id: "4",
     name: "TRIGOs",
     openCourse: "12:00",
-    finishCourse: "12:00",
+    finishCourse: "13:00",
     day: "1",
   },
   {
