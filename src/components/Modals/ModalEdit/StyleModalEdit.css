@@ -1,5 +1,5 @@
-.correct-validation {
-  left: 50%;
+.correct-validation-edit {
+  left: 40%;
   top: 16px;
   position: absolute;
   display: flex;
@@ -9,7 +9,7 @@
   border-radius: 5px;
   animation: bn53bounce 4s infinite;
 }
-.bi-check-circle-fill {
+.bi-check-circle-fill-edit {
   margin-left: 5px;
   color: #7209b7;
 }

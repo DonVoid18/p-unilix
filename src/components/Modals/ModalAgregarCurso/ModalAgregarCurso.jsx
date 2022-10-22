@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "../Modal";
-import SelectDay from "../../selectDay/SelectDay";
-import AlarmClock from "../../alarmClock/AlarmClock";
+import SelectDay from "../../SelectDay/SelectDay";
+import AlarmClock from "../../AlarmClock/AlarmClock";
 import Preloader from "../../Preloader/Preloader";
-import "./style.css";
+import "./StyleModalAgregar.css";
 import {
   ContainerSelectDay,
   ContainerInput,
@@ -11,7 +11,7 @@ import {
   Boton,
   Contenido,
   ContainerSchedule,
-} from "./stylesComponents";
+} from "./Styled-ModalAgregar";
 const regexValid = /^[^]+$/;
 const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
   const [form, setForm] = useState({

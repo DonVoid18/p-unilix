@@ -1,60 +1,14 @@
 import "./Table.css";
-import IconDelete from "../icon_button/IconDelete";
-import IconEdit from "../icon_button/IconEdit";
-import ModalDelete from "../modal/modalDelete/ModalDelete";
-import ModalEdit from "../modal/modalEdit/ModalEdit";
-import CellCourse from "../cellCourse/CellCourse";
-let data1 = [
-  {
-    id: "1",
-    name: "TRIGOs",
-    openCourse: "12:00",
-    finishCourse: "12:00",
-    day: "1",
-  },
-  {
-    id: "4",
-    name: "TRIGOs",
-    openCourse: "12:00",
-    finishCourse: "13:00",
-    day: "1",
-  },
-  {
-    id: "4asd",
-    name: "TRIGOs",
-    openCourse: "12:00",
-    finishCourse: "12:00",
-    day: "1",
-  },
-  {
-    id: "4qwe",
-    name: "TRIGOs",
-    openCourse: "13:00",
-    finishCourse: "12:00",
-    day: "1",
-  },
-  {
-    id: "2",
-    name: "comunicacion",
-    openCourse: "12:00",
-    finishCourse: "12:00",
-    day: "2",
-  },
-  {
-    id: "3",
-    name: "react",
-    openCourse: "12:00",
-    finishCourse: "12:00",
-    day: "1",
-  },
-];
+import IconDelete from "../Icon_button/IconDelete";
+import IconEdit from "../Icon_button/IconEdit";
+import CellCourse from "../CellCourse/CellCourse";
+import ModalDelete from "../Modals/ModalDelete/ModalDelete";
+import ModalEdit from "../Modals/ModalEdit/ModalEdit";
 import { useState } from "react";
-const Table = () => {
-  const [data, setData] = useState(data1);
+const Table = ({ dataProps, setDataProps }) => {
   const [openModal, setOpenModal] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);
   const [valueSelect, setValueSelect] = useState("");
-
   const handlerModal1 = (obj) => {
     setValueSelect(obj);
     setOpenModal1(!openModal1);
@@ -63,10 +17,19 @@ const Table = () => {
     setValueSelect(obj);
     setOpenModal(!openModal);
   };
-
   const cellCourses = (number) => {
-    return data
+    return dataProps
       .filter((course) => course.day === number)
+      .sort((a, b) => {
+        // ordenamiento
+        const fH = a.finishCourse.split(":");
+        const oH = b.openCourse.split(":");
+        // curso anterior
+        const m1 = parseInt(fH[0]) * 60 + parseInt(fH[1]);
+        // curso posterior
+        const m2 = parseInt(oH[0]) * 60 + parseInt(oH[1]);
+        return m1 - m2;
+      })
       .map((value) => (
         <CellCourse
           key={value.id}
@@ -80,7 +43,7 @@ const Table = () => {
   };
   const maxColumn = () => {
     let cts = [0, 0, 0, 0, 0, 0, 0];
-    data.forEach((element) => {
+    dataProps.forEach((element) => {
       if (element.day === "1") cts[0]++;
       if (element.day === "2") cts[1]++;
       if (element.day === "3") cts[2]++;
@@ -96,22 +59,27 @@ const Table = () => {
     let model = [];
     // cuanto es el maximo de cursos en una columna
     let max = maxColumn();
-    const cantCourse = data.filter((course) => course.day === number).length;
+    const cantCourse = dataProps.filter(
+      (course) => course.day === number
+    ).length;
     for (let i = 0; i < max - cantCourse; i++) {
       model.push(<div key={i} className="container_cell"></div>);
     }
     return model;
   };
-
   const deleteCourse = () => {
-    const newCourses = data.filter((course) => course.id !== valueSelect.id);
-    setData(newCourses);
+    const newCourses = dataProps.filter(
+      (course) => course.id !== valueSelect.id
+    );
+    setDataProps(newCourses);
   };
   const modifiedCourse = () => {
     // modificar
-    const newCourses = data.filter((course) => course.id !== valueSelect.id);
+    const newCourses = dataProps.filter(
+      (course) => course.id !== valueSelect.id
+    );
     const newData = [...newCourses, valueSelect];
-    setData(newData);
+    setDataProps(newData);
   };
 
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import useOnClickOutside from "../../utils/useOnClickOutside";
 const Modal = ({
   children,

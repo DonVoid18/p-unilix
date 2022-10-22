@@ -1,0 +1,122 @@
+:root {
+  --text-color-1: rgb(255, 255, 255);
+  --text-color-2: #e8ecf0;
+  --text-color-3: #cdd0d3;
+  --text-color-4: #bdc1c6ab;
+
+  --color-1: #838994;
+  --color-2: rgba(236, 236, 236, 0.223);
+  --color-4: rgba(236, 236, 236, 0.111);
+  --color-5: rgba(35, 33, 33, 0.288);
+
+  --background-1: #192229;
+  --background-2: rgba(255, 255, 255, 0.495);
+  --background-3: #ffc40070;
+  --background-4: #25f7a0be;
+  --background-5: #ef233b87;
+  --background-6: #00b0b966;
+
+  --border-radius-1: 10px;
+  --border-radius-2: 5px;
+}
+.container_courses_crosses {
+  display: grid;
+  gap: 20px;
+}
+.container_title_courses_crosses {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+/* css del container del curso */
+.container_crosses {
+  border: 2px solid #111427;
+  padding: 10px;
+  position: relative;
+  border-radius: var(--border-radius-2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #e9ecef;
+}
+.title_container_crosses {
+  top: -21px;
+  left: 5px;
+  position: absolute;
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background-color: #111427;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+/* css del container de cruce individual */
+.container_crosses {
+  display: flex;
+  gap: 10px;
+}
+.container_crosses:nth-child(1) {
+  margin-top: 20px;
+}
+.value_course_crosses {
+  display: flex;
+  padding: 8px;
+  border-radius: var(--border-radius-2);
+  border: 1px solid #e9ecef;
+}
+.value_course_crosses:nth-child(3n + 1) {
+  background-color: var(--background-3);
+}
+.value_course_crosses:nth-child(3n + 2) {
+  background-color: var(--background-4);
+}
+.value_course_crosses:nth-child(3n + 3) {
+  background-color: var(--background-5);
+}
+.value_course_crosses:nth-child(3n + 5) {
+  background-color: var(--background-6);
+}
+.course_grup_crosses,
+.time_crosses_value {
+  position: relative;
+  text-align: center;
+  padding: 13px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius-2);
+}
+.course_grup_crosses {
+  margin-right: 5px;
+}
+.name_grup_crosses,
+.name_time_crosses {
+  top: -8px;
+  left: calc(50% - 40.3px / 2);
+  margin: auto;
+  position: absolute;
+  font-size: 11px;
+  padding: 0 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+.name_time_crosses {
+  left: calc(45% - 41.23px / 2);
+}
+.course_one_crosses,
+.course_two_crosses {
+  background-color: var(--background-2);
+  border-radius: var(--border-radius-2);
+  padding: 5px 15px;
+}
+.course_one_crosses {
+  margin-right: 5px;
+}
+.course_time_value {
+  background-color: var(--background-2);
+  border-radius: var(--border-radius-2);
+  padding: 5px 10px;
+}
