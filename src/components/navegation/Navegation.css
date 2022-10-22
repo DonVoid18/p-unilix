@@ -1,23 +1,31 @@
+:root {
+  --clr-boton-1: #111427;
+  --clr-boton-2: #d81e5b;
+
+  --clr-text-1: white;
+}
 .header {
   width: 100%;
-  min-height: 6.5rem;
+  min-height: 6rem;
   padding: 0 3rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.211);
 }
 .container_logo {
   display: flex;
   align-items: center;
 }
 .container_logo img {
-  width: 8%;
+  width: 13%;
   min-width: 40px;
 }
 .container_logo h1 {
-  font-size: 1.8em;
-  margin-left: 10px;
+  font-size: 2em;
+  margin-left: 15px;
+  letter-spacing: 1px;
 }
 /* navegation */
 .header_navegation ul {
@@ -32,30 +40,14 @@
   text-align: center;
 }
 .button_header1 {
-  background: var(--bck-1);
-  color: var(--ct-1);
+  background: var(--clr-boton-1);
+  color: var(--clr-text-1);
 }
 .button_header2 {
-  background-image: linear-gradient(
-    to right,
-    #02aab0 0%,
-    #00cdac 51%,
-    #02aab0 100%
-  );
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: var(--ct-1);
+  background-color: var(--clr-boton-2);
+  color: var(--clr-text-1);
+  transition: 0.2s ease-in;
 }
 .button_header2:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+  filter: grayscale(30%);
 }
-
-/* dark mode */
-/* .header {
-  color: white;
-}
-.button_header1{
-  border: 1px solid white;
-} */

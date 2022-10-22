@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const colorBack = "#09c598";
+const colorBack = "#d81e5b";
 const ContainerSelectDay = styled.div`
   display: grid;
   position: relative;
@@ -69,7 +69,7 @@ const Contenido = styled.form`
     font-size: 1em;
   }
   .not-valid {
-    border: 2px solid #e6394765;
+    border: 2px solid #d81e5c7a;
   }
 `;
 export {

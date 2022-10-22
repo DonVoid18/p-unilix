@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const colorBack = "#7209b7";
+const colorBack = "#3e23ef";
 const ContainerSelectDay = styled.div`
   display: grid;
   position: relative;

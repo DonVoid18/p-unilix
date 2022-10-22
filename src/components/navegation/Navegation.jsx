@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Navegation.css";
 import logo from "../../assets/logo.png";
-import ModalAgregarCurso from "../Modals/modalAgregarCurso/ModalAgregarCurso";
-import ModalCruces from "../Modals/modalCruces/ModalCruces";
+import ModalAgregarCurso from "../Modals/ModalAgregarCurso/ModalAgregarCurso";
+import ModalCruces from "../Modals/ModalCruces/ModalCruces";
 const Navegation = ({ dataProps }) => {
   const [openModal, setOpenModal] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);

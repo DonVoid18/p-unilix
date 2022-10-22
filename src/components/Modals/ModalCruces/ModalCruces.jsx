@@ -76,6 +76,7 @@ const ModalCruces = ({ openModal, setOpenModal, data }) => {
       posicionModal={"center"}
       padding={"20px"}
       widthContenedor={"700px"}
+      colorText={"#d81e5b"}
     >
       <Contenido>
         {contentEmpty() !== 0 ? (

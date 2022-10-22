@@ -93,6 +93,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       posicionModal={"center"}
       padding={"20px"}
       widthContenedor={"470px"}
+      colorText={"#d81e5b"}
     >
       <Contenido onSubmit={sendForm}>
         <ContainerInput className={classInputValid(validName)}>

@@ -20,7 +20,7 @@ const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
   return (
     <div className="container_cell">
       <p className="title_cell">{value.name}</p>
-      <p>
+      <p className="hor_cell">
         {transformHor(value.openCourse)} - {transformHor(value.finishCourse)}
       </p>
       <div className="buttons_cell">

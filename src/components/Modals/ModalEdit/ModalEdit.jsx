@@ -53,7 +53,7 @@ const ModalEdit = ({
   useEffect(() => {
     setTimeout(() => {
       setBotonAgregado(false);
-    }, 8000);
+    }, 3000);
   }, [botonAgregado]);
   const sendForm = (e) => {
     e.preventDefault();
@@ -68,15 +68,14 @@ const ModalEdit = ({
     if (resultName && resultDay && resultHor) {
       setPreloader(true);
       // guardar el objeto
-      modifiedCourse();
-      console.log(form);
+
       setTimeout(() => {
+        setPreloader(false);
+        modifiedCourse();
+        console.log(form);
         setBotonAgregado(true);
       }, 3000);
     }
-    setTimeout(() => {
-      setPreloader(false);
-    }, 3000);
   };
   const validHorario = () => {
     const oH = form.openCourse.split(":");
@@ -100,7 +99,7 @@ const ModalEdit = ({
       mostrarOverlay={true}
       posicionModal={"center"}
       padding={"20px"}
-      colorText={"#7209b7"}
+      colorText={"#3e23ef"}
     >
       <Contenido onSubmit={sendForm}>
         <ContainerInput className={classInputValid(validName)}>

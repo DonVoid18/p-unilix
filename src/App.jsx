@@ -6,14 +6,21 @@ import { useState } from "react";
 let data1 = [
   {
     id: "1",
-    name: "a",
+    name: "LENGUAJE DE COMPILADORES",
     openCourse: "22:00",
     finishCourse: "23:00",
     day: "1",
   },
   {
+    id: "78",
+    name: "MATE",
+    openCourse: "12:00",
+    finishCourse: "13:00",
+    day: "1",
+  },
+  {
     id: "4",
-    name: "b",
+    name: "TELECOMUNICACIONES",
     openCourse: "12:00",
     finishCourse: "13:00",
     day: "1",

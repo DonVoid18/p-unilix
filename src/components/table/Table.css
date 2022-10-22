@@ -1,3 +1,9 @@
+:root {
+  --clr-3: #3e23ef;
+  --clr-4: #e9ecef;
+  --clr-5: #f9fafb;
+  --clr-text-1: white;
+}
 .container_table {
   width: 95%;
   min-height: 550px;
@@ -8,8 +14,8 @@
   grid-template-columns: repeat(7, minmax(180px, 1fr));
   overflow: auto;
   gap: 0.2em;
-  background-color: #f9fafb;
-  padding: 1.25rem;
+  background-color: var(--clr-5);
+  padding: 1rem;
 }
 .container_column {
   display: grid;
@@ -18,18 +24,19 @@
   font-size: 1em;
 }
 .container_column_title {
-  background-color: rgb(40, 52, 186);
-  color: white;
+  background-color: var(--clr-3);
+  color: var(--clr-text-1);
   text-align: center;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   padding: 0.9375rem 0.625rem;
+  letter-spacing: 2px;
 }
 .container_cell {
   height: 7.5em;
   text-align: center;
-  background-color: #e9ecef;
+  background-color: var(--clr-4);
   border-radius: 5px;
   padding: 0.9375rem 0.625rem;
   overflow: hidden;
@@ -42,6 +49,10 @@
   text-overflow: ellipsis;
   overflow: hidden;
   font-weight: 700;
+  font-size: 17px;
+}
+.hor_cell {
+  font-size: 15.5px;
 }
 .buttons_cell {
   display: flex;
@@ -53,14 +64,10 @@
   align-items: center;
   justify-content: center;
   padding: 0.25rem;
-  color: var(--ct-1);
+  color: var(--clr-text-1);
 }
 .buttons_cell button:nth-child(1) {
-  background: linear-gradient(
-    99.9deg,
-    rgb(0, 199, 103) 2.1%,
-    rgb(0, 196, 101) 109.65%
-  );
+  background: #0cd868;
 }
 .buttons_cell button:nth-child(2) {
   background: #ef233c;
