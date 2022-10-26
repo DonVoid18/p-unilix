@@ -74,9 +74,9 @@ const ModalCruces = ({ openModal, setOpenModal, data }) => {
       mostrarHeader={true}
       mostrarOverlay={true}
       posicionModal={"center"}
-      padding={"20px"}
-      widthContenedor={"700px"}
-      colorText={"#d81e5b"}
+      padding={"1.25rem"}
+      widthContenedor={"43.75rem"}
+      colorText={"#3e23ef"}
     >
       <Contenido>
         {contentEmpty() !== 0 ? (
@@ -101,7 +101,7 @@ export default ModalCruces;
 
 const Contenido = styled.div`
   display: grid;
-  gap: 30px;
+  gap: 1.875rem;
   max-height: 500px;
   overflow-y: auto;
 `;

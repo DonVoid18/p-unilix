@@ -2,26 +2,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 .lds-spinner {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
 }
 .lds-spinner div {
-  transform-origin: 40px 40px;
+  transform-origin: 2.5rem 2.5rem;
   animation: lds-spinner 1.2s linear infinite;
 }
 .lds-spinner div:after {
   content: " ";
   display: block;
   position: absolute;
-  top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
+  top: 0.1875rem;
+  left: 2.3125rem;
+  width: 0.375rem;
+  height: 1.125rem;
   border-radius: 20%;
   background: #242424;
 }

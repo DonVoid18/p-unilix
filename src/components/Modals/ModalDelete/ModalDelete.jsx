@@ -30,7 +30,7 @@ const ModalDelete = ({ openModal, setOpenModal, deleteCourse }) => {
 export default ModalDelete;
 
 const Boton = styled.button`
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   color: #fff;
   border: none;
   background: #ef233c;

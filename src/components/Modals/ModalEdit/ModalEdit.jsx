@@ -98,7 +98,7 @@ const ModalEdit = ({
       mostrarHeader={true}
       mostrarOverlay={true}
       posicionModal={"center"}
-      padding={"20px"}
+      padding={"1.25rem"}
       colorText={"#3e23ef"}
     >
       <Contenido onSubmit={sendForm}>

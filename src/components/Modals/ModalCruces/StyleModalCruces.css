@@ -21,7 +21,7 @@
 }
 .container_courses_crosses {
   display: grid;
-  gap: 20px;
+  gap: 1.25rem;
 }
 .container_title_courses_crosses {
   font-size: 1.5rem;
@@ -31,7 +31,7 @@
 /* css del container del curso */
 .container_crosses {
   border: 2px solid #111427;
-  padding: 10px;
+  padding: 0.625rem;
   position: relative;
   border-radius: var(--border-radius-2);
   display: flex;
@@ -43,8 +43,8 @@
   top: -21px;
   left: 5px;
   position: absolute;
-  font-size: 14px;
-  padding: 5px 10px;
+  font-size: 0.875rem;
+  padding: 0.3125rem 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -58,14 +58,14 @@
 /* css del container de cruce individual */
 .container_crosses {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .container_crosses:nth-child(1) {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 .value_course_crosses {
   display: flex;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: var(--border-radius-2);
   border: 1px solid #e9ecef;
 }
@@ -85,12 +85,12 @@
 .time_crosses_value {
   position: relative;
   text-align: center;
-  padding: 13px 15px;
+  padding: 0.8125rem 0.9375rem;
   border: 2px solid #e9ecef;
   border-radius: var(--border-radius-2);
 }
 .course_grup_crosses {
-  margin-right: 5px;
+  margin-right: 0.3125rem;
 }
 .name_grup_crosses,
 .name_time_crosses {
@@ -98,7 +98,7 @@
   left: calc(50% - 40.3px / 2);
   margin: auto;
   position: absolute;
-  font-size: 11px;
+  font-size: 0.6875rem;
   padding: 0 5px;
   background-color: white;
   border-radius: 5px;
@@ -110,13 +110,13 @@
 .course_two_crosses {
   background-color: var(--background-2);
   border-radius: var(--border-radius-2);
-  padding: 5px 15px;
+  padding: 0.3125rem 0.9375rem;
 }
 .course_one_crosses {
-  margin-right: 5px;
+  margin-right: 0.3125rem;
 }
 .course_time_value {
   background-color: var(--background-2);
   border-radius: var(--border-radius-2);
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
 }

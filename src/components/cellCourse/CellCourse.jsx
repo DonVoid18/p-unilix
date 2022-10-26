@@ -1,6 +1,7 @@
 import React from "react";
-
+import styled, { useTheme } from "styled-components";
 const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
+  const theme = useTheme();
   const transformHor = (value) => {
     const hor = value.split(":");
     const suma = parseInt(hor[0]) * 60 + parseInt(hor[1]);
@@ -18,7 +19,11 @@ const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
     }
   };
   return (
-    <div className="container_cell">
+    <ContainerCell
+      className="container_cell"
+      color={theme.cellColor}
+      colorText={theme.textColor}
+    >
       <p className="title_cell">{value.name}</p>
       <p className="hor_cell">
         {transformHor(value.openCourse)} - {transformHor(value.finishCourse)}
@@ -27,8 +32,13 @@ const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
         <button onClick={() => f1(value)}>{ic1}</button>
         <button onClick={() => f2(value)}>{ic2}</button>
       </div>
-    </div>
+    </ContainerCell>
   );
 };
 
 export default CellCourse;
+
+const ContainerCell = styled.div`
+  background-color: ${(props) => props.color};
+  color: ${(props) => props.colorText};
+`;

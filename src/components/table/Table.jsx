@@ -5,7 +5,9 @@ import CellCourse from "../CellCourse/CellCourse";
 import ModalDelete from "../Modals/ModalDelete/ModalDelete";
 import ModalEdit from "../Modals/ModalEdit/ModalEdit";
 import { useState } from "react";
+import styled, { useTheme } from "styled-components";
 const Table = ({ dataProps, setDataProps }) => {
+  const theme = useTheme();
   const [openModal, setOpenModal] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);
   const [valueSelect, setValueSelect] = useState("");
@@ -63,7 +65,13 @@ const Table = ({ dataProps, setDataProps }) => {
       (course) => course.day === number
     ).length;
     for (let i = 0; i < max - cantCourse; i++) {
-      model.push(<div key={i} className="container_cell"></div>);
+      model.push(
+        <ContainerCellEmpty
+          key={i}
+          className="container_cell"
+          colorTable={theme.cellColor}
+        ></ContainerCellEmpty>
+      );
     }
     return model;
   };
@@ -84,7 +92,7 @@ const Table = ({ dataProps, setDataProps }) => {
 
   return (
     <>
-      <div className="container_table">
+      <ContainerTable className="container_table" colorTable={theme.tableColor}>
         <div className="container_column">
           <div className="container_column_title">lunes</div>
           {cellCourses("1")}
@@ -120,7 +128,7 @@ const Table = ({ dataProps, setDataProps }) => {
           {cellCourses("7")}
           {cellCoursesModel("7")}
         </div>
-      </div>
+      </ContainerTable>
       <ModalDelete
         openModal={openModal}
         setOpenModal={setOpenModal}
@@ -138,3 +146,9 @@ const Table = ({ dataProps, setDataProps }) => {
 };
 
 export default Table;
+const ContainerTable = styled.div`
+  background-color: ${(props) => props.colorTable};
+`;
+const ContainerCellEmpty = styled.div`
+  background-color: ${(props) => props.colorTable};
+`;

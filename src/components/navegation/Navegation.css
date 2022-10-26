@@ -1,5 +1,5 @@
 :root {
-  --clr-boton-1: #111427;
+  --clr-boton-1: #2bb35c;
   --clr-boton-2: #d81e5b;
 
   --clr-text-1: white;
@@ -10,9 +10,9 @@
   padding: 0 3rem;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.211);
+  justify-content: space-between;
 }
 .container_logo {
   display: flex;
@@ -20,20 +20,26 @@
 }
 .container_logo img {
   width: 13%;
-  min-width: 40px;
+  min-width: 2.75rem;
 }
 .container_logo h1 {
   font-size: 2em;
-  margin-left: 15px;
+  margin-left: 0.625rem;
   letter-spacing: 1px;
+  font-size: clamp(30px, 3vw, 35px);
 }
 /* navegation */
 .header_navegation ul {
+  width: 29.3625rem;
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2em;
+  justify-content: space-between;
+}
+.header_navegation ul li{
+  display: flex;
+  align-items: center;
 }
 .header_navegation ul li button {
   padding: 0.7em 1em;

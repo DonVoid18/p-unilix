@@ -32,8 +32,8 @@ const NameInputContainer = styled.span`
   top: -10px;
   left: 5px;
   position: absolute;
-  font-size: 13px;
-  padding: 0 5px;
+  font-size: 0.8125rem;
+  padding: 0 0.3125rem;
   border-radius: 5px;
   background-color: white;
   font-weight: 700;

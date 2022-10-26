@@ -16,7 +16,7 @@ const ContainerInput = styled.div`
   border: 2px solid #e9ecef;
   border-radius: 5px;
   .select {
-    margin-left: 10px;
+    margin-left: 0.625rem;
   }
 `;
 const ContainerSchedule = styled.div`
@@ -32,8 +32,8 @@ const NameInputContainer = styled.span`
   top: -10px;
   left: 5px;
   position: absolute;
-  font-size: 13px;
-  padding: 0 5px;
+  font-size: 0.8125rem;
+  padding: 0 0.3125rem;
   border-radius: 5px;
   background-color: white;
   font-weight: 700;

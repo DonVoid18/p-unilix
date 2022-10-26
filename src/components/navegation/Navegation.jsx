@@ -3,16 +3,20 @@ import "./Navegation.css";
 import logo from "../../assets/logo.png";
 import ModalAgregarCurso from "../Modals/ModalAgregarCurso/ModalAgregarCurso";
 import ModalCruces from "../Modals/ModalCruces/ModalCruces";
-const Navegation = ({ dataProps }) => {
+import Icon_darkMode from "../Icon_darkMode/Icon_darkMode";
+import { useTheme } from "styled-components";
+import styled from "styled-components";
+
+const Navegation = ({ dataProps, toggleTheme, isDarkTheme }) => {
   const [openModal, setOpenModal] = useState(false);
   const [openModal1, setOpenModal1] = useState(false);
-
+  const theme = useTheme();
   return (
     <>
       <header className="header">
         <div className="container_logo">
           <img src={logo} alt="Logo" />
-          <h1>UNILIX</h1>
+          <Title color={theme.text}>UNILIX</Title>
         </div>
         <nav className="header_navegation">
           <ul>
@@ -32,6 +36,12 @@ const Navegation = ({ dataProps }) => {
                 Cruces de horario
               </button>
             </li>
+            <li>
+              <Icon_darkMode
+                toggleTheme={toggleTheme}
+                isDarkTheme={isDarkTheme}
+              />
+            </li>
           </ul>
         </nav>
       </header>
@@ -46,3 +56,7 @@ const Navegation = ({ dataProps }) => {
 };
 
 export default Navegation;
+
+const Title = styled.h1`
+  color: ${(props) => props.color};
+`;

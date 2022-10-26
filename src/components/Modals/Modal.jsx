@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useRef } from "react";
 import useOnClickOutside from "../../utils/useOnClickOutside";
 const Modal = ({
@@ -14,6 +14,7 @@ const Modal = ({
   widthContenedor,
   colorText,
 }) => {
+  const theme = useTheme();
   let modalRef = useRef();
   useOnClickOutside(modalRef, () => cambiarEstado(false));
   return (
@@ -24,6 +25,7 @@ const Modal = ({
             ref={modalRef}
             widthContenedor={widthContenedor}
             padding={padding}
+            bgd={theme.body}
           >
             {mostrarHeader && (
               <EncabezadoModal colorText={colorText}>
@@ -64,7 +66,7 @@ const Overlay = styled.div`
   left: 0;
   background: ${(props) =>
     props.mostrarOverlay ? "rgba(0,0,0,.7)" : "rgba(0,0,0,0)"};
-  padding: 40px;
+  padding: 2.5rem;
   display: flex;
   align-items: ${(props) =>
     props.posicionModal ? props.posicionModal : "center"};
@@ -74,8 +76,9 @@ const Overlay = styled.div`
 const ContenedorModal = styled.div`
   width: ${(props) =>
     props.widthContenedor ? props.widthContenedor : "500px"};
-  min-height: 100px;
+  min-height: 6.25rem;
   background: #fff;
+  backdrop-filter: blur(10px);
   position: relative;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -86,8 +89,8 @@ const EncabezadoModal = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid #e8e8e8;
 
   h3 {
@@ -103,8 +106,8 @@ const BotonCerrar = styled.button`
   top: 15px;
   right: 20px;
 
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   border: none;
   background: none;
   cursor: pointer;

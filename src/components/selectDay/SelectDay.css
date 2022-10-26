@@ -6,9 +6,9 @@ input[type="radio"] {
   display: none;
 }
 .day_week {
-  width: 35px;
-  height: 35px;
-  margin: 3px;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  margin: 0.1875rem;
   cursor: pointer;
   border-radius: 50%;
   font-size: 1em;

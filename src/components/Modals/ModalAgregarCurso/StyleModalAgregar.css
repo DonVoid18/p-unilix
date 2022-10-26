@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   content: "\1F4BE";
-  font-size: 24px;
+  font-size: 1.5rem;
   position: absolute;
   top: -2px;
   right: 0;
@@ -39,12 +39,12 @@
   display: flex;
   align-items: center;
   background-color: #e9ecef;
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
   border-radius: 5px;
   animation: bn53bounce 4s infinite;
 }
 .bi-check-circle-fill {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
   color: #d81e5b;
 }
 @keyframes bn53bounce {

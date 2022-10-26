@@ -46,7 +46,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
   useEffect(() => {
     setTimeout(() => {
       setBotonAgregado(false);
-    }, 8000);
+    }, 3000);
   }, [botonAgregado]);
 
   const sendForm = (e) => {
@@ -63,12 +63,10 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       // guardar el objeto
       console.log(form);
       setTimeout(() => {
+        setPreloader(false);
         setBotonAgregado(true);
       }, 3000);
     }
-    setTimeout(() => {
-      setPreloader(false);
-    }, 3000);
   };
   const validHorario = () => {
     const oH = form.openCourse.split(":");
@@ -91,8 +89,8 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
       mostrarHeader={true}
       mostrarOverlay={true}
       posicionModal={"center"}
-      padding={"20px"}
-      widthContenedor={"470px"}
+      padding={"1.25rem"}
+      widthContenedor={"29.375rem"}
       colorText={"#d81e5b"}
     >
       <Contenido onSubmit={sendForm}>
