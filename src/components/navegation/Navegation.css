@@ -6,7 +6,7 @@
 }
 .header {
   width: 100%;
-  min-height: 6rem;
+  min-height: 5.5rem;
   padding: 0 3rem;
 
   display: flex;
@@ -19,8 +19,7 @@
   align-items: center;
 }
 .container_logo img {
-  width: 13%;
-  min-width: 2.75rem;
+  width: 3.5rem;
 }
 .container_logo h1 {
   font-size: 2em;
@@ -37,23 +36,40 @@
   display: flex;
   justify-content: space-between;
 }
-.header_navegation ul li{
+.header_navegation ul li {
   display: flex;
   align-items: center;
 }
-.header_navegation ul li button {
+.btn_navegation {
+  border: none;
+  outline: none;
   padding: 0.7em 1em;
   text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease 100ms;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
 }
-.button_header1 {
-  background: var(--clr-boton-1);
-  color: var(--clr-text-1);
+.btn_navegation:hover {
+  opacity: 0.95;
 }
-.button_header2 {
+.btn_navegation:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px rgba(0, 0, 0, 0.5);
+}
+#btnAddCourse {
+  background-color: var(--clr-boton-1);
+}
+#btnCrossesCourse {
   background-color: var(--clr-boton-2);
-  color: var(--clr-text-1);
-  transition: 0.2s ease-in;
 }
-.button_header2:hover {
-  filter: grayscale(30%);
+.button_toggle_menu {
+  display: none;
+}
+.container_logo.active_menu {
+  display: none;
+}
+.container_bClosed_navegation {
+  display: none;
 }

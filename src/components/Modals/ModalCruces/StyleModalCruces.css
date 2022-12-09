@@ -40,14 +40,14 @@
   background-color: #e9ecef;
 }
 .title_container_crosses {
-  top: -21px;
-  left: 5px;
+  top: -1.3125rem;
+  left: 0.3125rem;
   position: absolute;
   font-size: 0.875rem;
   padding: 0.3125rem 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   border-radius: 5px;
   background-color: #111427;
   color: white;
@@ -83,6 +83,7 @@
 }
 .course_grup_crosses,
 .time_crosses_value {
+  display: flex;
   position: relative;
   text-align: center;
   padding: 0.8125rem 0.9375rem;
@@ -94,23 +95,24 @@
 }
 .name_grup_crosses,
 .name_time_crosses {
-  top: -8px;
-  left: calc(50% - 40.3px / 2);
+  top: -0.5rem;
+  left: calc(50% - 2.5187rem / 2);
   margin: auto;
   position: absolute;
   font-size: 0.6875rem;
-  padding: 0 5px;
+  padding: 0 0.3125rem;
   background-color: white;
   border-radius: 5px;
 }
 .name_time_crosses {
-  left: calc(45% - 41.23px / 2);
+  left: calc(45% - 2.5769rem / 2);
 }
 .course_one_crosses,
 .course_two_crosses {
   background-color: var(--background-2);
   border-radius: var(--border-radius-2);
   padding: 0.3125rem 0.9375rem;
+  word-wrap: break-word;
 }
 .course_one_crosses {
   margin-right: 0.3125rem;
@@ -119,4 +121,5 @@
   background-color: var(--background-2);
   border-radius: var(--border-radius-2);
   padding: 0.3125rem 0.625rem;
+  word-wrap: break-word;
 }

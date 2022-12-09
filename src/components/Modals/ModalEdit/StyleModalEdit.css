@@ -1,6 +1,6 @@
 .correct-validation-edit {
-  left: 40%;
-  top: 16px;
+  left: 60%;
+  top: 1rem;
   position: absolute;
   display: flex;
   align-items: center;
@@ -8,10 +8,9 @@
   padding: 0.3125rem 0.625rem;
   border-radius: 5px;
   animation: bn53bounce 4s infinite;
-  font-size: 1rem;
 }
 .bi-check-circle-fill-edit {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
   color: #3e23ef;
 }
 @keyframes bn53bounce {

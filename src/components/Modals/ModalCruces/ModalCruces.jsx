@@ -75,7 +75,7 @@ const ModalCruces = ({ openModal, setOpenModal, data }) => {
       mostrarOverlay={true}
       posicionModal={"center"}
       padding={"1.25rem"}
-      widthContenedor={"43.75rem"}
+      widthContenedor={"55.75rem"}
       colorText={"#3e23ef"}
     >
       <Contenido>

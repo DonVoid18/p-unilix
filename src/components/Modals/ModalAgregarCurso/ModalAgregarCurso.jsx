@@ -23,7 +23,7 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
   const [validName, setValidName] = useState();
   const [validDay, setValidDay] = useState();
   const [validHor, setValidHor] = useState();
-  const [botonAgregado, setBotonAgregado] = useState(false);
+  const [botonAgregado, setBotonAgregado] = useState(true);
   const [preloader, setPreloader] = useState(false);
   const handleChange = (e) => {
     setForm({
@@ -60,8 +60,6 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
 
     if (resultName && resultDay && resultHor) {
       setPreloader(true);
-      // guardar el objeto
-      console.log(form);
       setTimeout(() => {
         setPreloader(false);
         setBotonAgregado(true);
@@ -146,9 +144,6 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
             valueDay={form.dayCourse}
           />
         </ContainerSelectDay>
-        {/* <Boton onClick={() => setOpenModal(!openModal)} type="submit">
-          Agregar
-        </Boton> */}
         <Boton type="submit">Agregar Curso</Boton>
       </Contenido>
       {botonAgregado ? (
@@ -156,8 +151,8 @@ const ModalAgregarCurso = ({ openModal, setOpenModal }) => {
           Agregado
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="1.25rem"
+            height="1.25rem"
             fill="currentColor"
             className="bi bi-check-circle-fill"
             viewBox="0 0 16 16"

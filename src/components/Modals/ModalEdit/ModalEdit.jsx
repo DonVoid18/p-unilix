@@ -72,7 +72,6 @@ const ModalEdit = ({
       setTimeout(() => {
         setPreloader(false);
         modifiedCourse();
-        console.log(form);
         setBotonAgregado(true);
       }, 3000);
     }
@@ -83,7 +82,6 @@ const ModalEdit = ({
     // validacion
     const m1 = parseInt(oH[0]) * 60 + parseInt(oH[1]);
     const m2 = parseInt(fH[0]) * 60 + parseInt(fH[1]);
-    console.log(m1 < m2);
     return m1 < m2;
   };
   const classInputValid = (value) => {
@@ -150,8 +148,8 @@ const ModalEdit = ({
           Modificado
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="1.25rem"
+            height="1.25rem"
             fill="currentColor"
             className="bi bi-check-circle-fill-edit"
             viewBox="0 0 16 16"

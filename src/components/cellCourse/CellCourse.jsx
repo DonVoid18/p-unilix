@@ -25,9 +25,9 @@ const CellCourse = ({ value, f1, f2, ic1, ic2 }) => {
       colorText={theme.textColor}
     >
       <p className="title_cell">{value.name}</p>
-      <p className="hor_cell">
+      <HorCell colorText={theme.icon}>
         {transformHor(value.openCourse)} - {transformHor(value.finishCourse)}
-      </p>
+      </HorCell>
       <div className="buttons_cell">
         <button onClick={() => f1(value)}>{ic1}</button>
         <button onClick={() => f2(value)}>{ic2}</button>
@@ -40,5 +40,9 @@ export default CellCourse;
 
 const ContainerCell = styled.div`
   background-color: ${(props) => props.color};
+  color: ${(props) => props.colorText};
+`;
+const HorCell = styled.p`
+  font-size: 0.9688rem;
   color: ${(props) => props.colorText};
 `;
